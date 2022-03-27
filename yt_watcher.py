@@ -22,6 +22,9 @@ parser.add_argument('--youtube_url', dest='youtube_url', type=str,
 parser.add_argument('--views', dest='views', type=int, default=1,
                     help='Number of views to provide to the selected youtube video.')
 
+parser.add_argument('--watch_full', dest='watch_full', action='store_true',
+                    help='If used, the video will be watched entirely (recommended for short videos).')
+
 parser.add_argument('--chrome_driver_path', dest='chrome_driver_path', type=str, default="drivers/chromedriver.exe",
                     help='Path to the chrome driver to use.')
 
@@ -62,12 +65,6 @@ for idx in range(args.views):
         print("Loading took too much time! Exit process")
         exit()
 
-    title = driver.find_element(by=By.XPATH, value="/html/head/title").get_attribute('innerText')
-    duration = driver.find_element(by=By.CLASS_NAME, value="ytp-time-duration").text
-    yt_video_seconds = convert_string_time_to_seconds(duration)
-
-    print("%s duration is %s. I will wait until it ends and then i will watch it again for other %s times." % (
-        title, duration, args.views - (idx + 1)))
     # CLICK ON ACCEPTANCE BUTTON
     buttons = driver.find_elements(by=By.TAG_NAME, value="tp-yt-paper-button")
     check_found = False
@@ -76,9 +73,23 @@ for idx in range(args.views):
             b.click()
             check_found = True
     if not check_found:
-        raise Exception("Acceptance button not found, please update data/config_text_languages.json for your language and use non-silent mode for testing.")
+        raise Exception(
+            "Acceptance button not found, please update data/config_text_languages.json for your language and use non-silent mode for testing.")
 
     # Simulate passing time also providing user feedback
+    # Time to watch is decided by the user choice
+    title = driver.find_element(by=By.XPATH, value="/html/head/title").get_attribute('innerText')
+    duration = driver.find_element(by=By.CLASS_NAME, value="ytp-time-duration").text
+
+    if args.watch_full:
+        yt_video_seconds = convert_string_time_to_seconds(duration)
+    else:
+        yt_video_seconds = 40  # minimum seconds to watch to count a visualization
+
+    print(
+        "%s duration is %s. I will watch it for %s seconds and then again for other %s times." % (
+            title, duration, yt_video_seconds, args.views - (idx + 1)))
+
     for _ in tqdm.tqdm(range(yt_video_seconds), total=yt_video_seconds, desc="Actual visualization time in seconds"):
         time.sleep(1)
     driver.close()
