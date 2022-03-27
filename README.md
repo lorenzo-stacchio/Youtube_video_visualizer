@@ -1,4 +1,9 @@
-# Youtube_video_visualizer
+# Youtube video visualizer
+
+<p align="center">
+  <img src="imgs/icon.png" alt="icon" width=300 height=200/>
+</p>
+
 Simple Python script based on selenium to augment views on a pre-defined youtube video. Is up to you the choice of implementing the dynamic change of your IP address or use the same at each iteration.
 
 

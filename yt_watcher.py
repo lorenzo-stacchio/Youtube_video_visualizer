@@ -33,10 +33,9 @@ yt_url = "https://www.youtube.com/watch?v=BwWGZJeRVmU"
 chrome_options = webdriver.ChromeOptions()
 if not sound:
     chrome_options.add_argument("--mute-audio")
-driver = webdriver.Chrome(executable_path=r"drivers/chromedriver.exe", chrome_options=chrome_options)
-
 
 for _ in range(views):
+    driver = webdriver.Chrome(executable_path=r"drivers/chromedriver.exe", chrome_options=chrome_options)
     driver.get(yt_url)
     delay = 5  # seconds
     try:
