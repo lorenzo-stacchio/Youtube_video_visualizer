@@ -1,9 +1,9 @@
 # Youtube video visualizer
 <p align="right">
-  <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blu"/>
-  <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=Selenium&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Python-FFD43B?logo=python&logoColor=blu"/>
+  <img src="https://img.shields.io/badge/Selenium-43B02A?logo=Selenium&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Google_chrome-4285F4?logo=Google-chrome&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=white"/>
 <img src="https://visitor-badge.laobi.icu/badge?page_id=lorenzo-stacchio.Youtube_video_visualizer" alt="visitors">
 </p>
 
