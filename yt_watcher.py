@@ -23,7 +23,7 @@ parser.add_argument('--views', dest='views', type=int, default=1,
                     help='Number of views to provide to the selected youtube video.')
 
 parser.add_argument('--watch_full', dest='watch_full', action='store_true',
-                    help='If used, the video will be watched entirely (recommended for short videos).')
+                    help='If used, the entire video will be watched (recommended for short videos).')
 
 parser.add_argument('--chrome_driver_path', dest='chrome_driver_path', type=str, default="drivers/chromedriver.exe",
                     help='Path to the chrome driver to use.')
