@@ -37,6 +37,7 @@ options:
   -h, --help            show this help message and exit
   --youtube_url         Valid url to a youtube video.
   --views               Number of views to provide to the selected youtube video.
+  --watch_full          If used, the video will be watched entirely (recommended for short videos).
   --chrome_driver_path  Path to the chrome driver to use.
   --silent_mode         Use the driver in silent mode.
   --sound               Sound on if driver not in silent mode.
