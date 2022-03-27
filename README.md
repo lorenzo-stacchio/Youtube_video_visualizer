@@ -1,18 +1,26 @@
 # Youtube video visualizer
+<p align="right">
+  <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blu"/>
+  <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=Selenium&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
+<img src="https://visitor-badge.laobi.icu/badge?page_id=lorenzo-stacchio.Youtube_video_visualizer" alt="visitors">
+</p>
 
 <p align="center">
   <img src="imgs/icon.png" alt="icon" width=300 height=200/>
 </p>
 
-Simple Python script based on [Selenium](https://www.selenium.dev/) to augment views on a pre-defined youtube video. 
-Is up to you the choice of implementing a dynamic change IP address feature or use your the default one.
-
+Simple Python script based on [Selenium](https://www.selenium.dev/) to augment views on a pre-defined youtube video. Is
+up to you the choice of implementing a dynamic change IP address feature or use your the default one.
 
 ## Drivers
 
-I will provide you a simple version of the Chrome Driver for Windows ([v. **ChromeDriver 99.0.4844.51**](https://chromedriver.storage.googleapis.com/index.html?path=99.0.4844.51/)).
-You can change in accordingly to your Google Chrome version, you can find the version for you [here](https://chromedriver.chromium.org/downloads).
-Remember to substitute the driver binaries in the ```drivers/``` folder.
+I will provide you a simple version of the Chrome Driver for Windows ([v. **ChromeDriver
+99.0.4844.51**](https://chromedriver.storage.googleapis.com/index.html?path=99.0.4844.51/)). You can change in
+accordingly to your Google Chrome version, you can find the version for
+you [here](https://chromedriver.chromium.org/downloads). Remember to substitute the driver binaries in
+the ```drivers/``` folder.
 
 ## Install
 
@@ -21,6 +29,7 @@ Create a virtual environment for python (or just use the global one) and install
 ```pip install -r requirements.txt```
 
 ## Usage
+
 ```
 usage: yt_watcher.py [-h] [--youtube_url YOUTUBE_URL] [--views VIEWS] [--sound SOUND] [--language LANGUAGE]
 
@@ -34,9 +43,11 @@ options:
   --language            Language used in youtube, please refer to data/config_text_languages.json to check supported language or add by your own will.
   ```
 
-Note that ```youtube_url``` must be a valid youtube video url as the [script default one](https://www.youtube.com/watch?v=BwWGZJeRVmU).
+Note that ```youtube_url``` must be a valid youtube video url as
+the [script default one](https://www.youtube.com/watch?v=BwWGZJeRVmU).
 
 ## TODO list:
+
 - [x] Support italian youtube language
 - [x] Params parsing
 - [ ] Support Ubuntu distribution (to be tested)
