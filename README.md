@@ -52,4 +52,4 @@ the [script default one](https://www.youtube.com/watch?v=BwWGZJeRVmU).
 - [x] Params parsing
 - [ ] Support Ubuntu distribution (to be tested)
 - [x] Support other youtube languages (tested on all countries reported in ```data/config_text_languages.json```)
-- [ ] Provide the chance to watch a video just for the time needed to count a visualization; 
+- [x] Provide the chance to watch a video just for the time needed to count a visualization; 
