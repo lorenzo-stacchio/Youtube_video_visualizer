@@ -18,10 +18,22 @@ Create a virtual environment for python (or just use the global one) and install
 ```pip install -r requirements.txt```
 
 ## Usage
+```
+usage: yt_watcher.py [-h] [--youtube_url YOUTUBE_URL] [--views VIEWS] [--sound SOUND] [--language LANGUAGE]
 
-Until a more formal version of the script, you can change the variables in ```yt_watcher.py``` to change the video url to and the number of times you want this scripts sees it.
-By default, the browser will be in silent mode, you can change it always from the same scripts. 
+options:
+  -h, --help            show this help message and exit
+  --youtube_url         Valid url to a youtube video.
+  --views               Number of views to provide to the selected youtube video.
+  --sound               Sound on if driver not in silent mode.
+  --language            Language used in youtube, please refer to data/config_text_languages.json to check supported language or add by your own will.
+  ```
+  
 
+Note that ```youtube_url``` must be a valid youtube video url as the [script default one](https://www.youtube.com/watch?v=BwWGZJeRVmU).
 
-The url must be a valid youtube video as: ```https://www.youtube.com/watch?v=BwWGZJeRVmU```.
-
+## TODO list:
+- [x] Support italian youtube language
+- [x] Params parsing
+- [ ] Linux support and testing 
+- [ ] Support english (and others) youtube languages
