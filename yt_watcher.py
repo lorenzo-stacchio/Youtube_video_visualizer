@@ -22,7 +22,10 @@ parser.add_argument('--youtube_url', dest='youtube_url', type=str,
 parser.add_argument('--views', dest='views', type=int, default=1,
                     help='Number of views to provide to the selected youtube video.')
 
-parser.add_argument('--sound', dest='sound', type=bool, default=True,
+parser.add_argument('--silent_mode', dest='silent_mode', action='store_true',
+                    help='Use the driver in silent mode.')
+
+parser.add_argument('--sound', dest='sound', action='store_true',
                     help='Sound on if driver not in silent mode.')
 
 parser.add_argument('--language', dest='language', type=str, default="it",
@@ -30,10 +33,14 @@ parser.add_argument('--language', dest='language', type=str, default="it",
 
 args = parser.parse_args()
 
-
 # CHROME DRIVER
 chrome_options = webdriver.ChromeOptions()
-if not args.sound:
+
+if args.silent_mode:
+    chrome_options.headless = True
+    chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
+    chrome_options.add_argument("--mute-audio")  # include it with silent mode
+elif not args.sound:  # valid only in non-silent mode
     chrome_options.add_argument("--mute-audio")
 
 # COUNTRY OPTIONS

@@ -25,6 +25,7 @@ options:
   -h, --help            show this help message and exit
   --youtube_url         Valid url to a youtube video.
   --views               Number of views to provide to the selected youtube video.
+  --silent_mode         Use the driver in silent mode.
   --sound               Sound on if driver not in silent mode.
   --language            Language used in youtube, please refer to data/config_text_languages.json to check supported language or add by your own will.
   ```
