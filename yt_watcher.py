@@ -68,13 +68,15 @@ for idx in range(args.views):
 
     print("%s duration is %s. I will wait until it ends and then i will watch it again for other %s times." % (
         title, duration, args.views - (idx + 1)))
+    # CLICK ON ACCEPTANCE BUTTON
     buttons = driver.find_elements(by=By.TAG_NAME, value="tp-yt-paper-button")
-
+    check_found = False
     for b in buttons:
-        print(b.text)
         if b.text == dict_html_elements_text["acceptance_terms_button_text"][args.language]:
             b.click()
-            print("ok")
+            check_found = True
+    if not check_found:
+        raise Exception("Acceptance button not found, please update data/config_text_languages.json for your language and use non-silent mode for testing.")
 
     # Simulate passing time also providing user feedback
     for _ in tqdm.tqdm(range(yt_video_seconds), total=yt_video_seconds, desc="Actual visualization time in seconds"):
