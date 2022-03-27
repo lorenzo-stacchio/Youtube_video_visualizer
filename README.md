@@ -11,20 +11,20 @@
   <img src="imgs/icon.png" alt="icon" width=300 height=200/>
 </p>
 
-Simple Python script based on [Selenium](https://www.selenium.dev/) to augment views on a pre-defined youtube video. Is
-up to you the choice of implementing a dynamic change IP address feature or use your the default one.
+Simple Python script based on [Selenium](https://www.selenium.dev/) to increase views on a pre-defined youtube video. Is
+up to you the choice of implementing a dynamic change IP address feature or use your default one.
 
 ## Drivers
 
 I will provide you a simple version of the Chrome Driver for Windows ([v. **ChromeDriver
-99.0.4844.51**](https://chromedriver.storage.googleapis.com/index.html?path=99.0.4844.51/)). You can change in
+99.0.4844.51**](https://chromedriver.storage.googleapis.com/index.html?path=99.0.4844.51/)). You can change it
 accordingly to your Google Chrome version, you can find the version for
-you [here](https://chromedriver.chromium.org/downloads). Remember to substitute the driver binaries in
+you [here](https://chromedriver.chromium.org/downloads). You should replace the driver binaries in
 the ```drivers/``` folder.
 
 ## Install
 
-Create a virtual environment for python (or just use the global one) and install all the dependecies with:
+Create a virtual environment for python (or just use the global one) and install all the dependencies with:
 
 ```pip install -r requirements.txt```
 
