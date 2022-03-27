@@ -1,5 +1,8 @@
 {
   "acceptance_terms_button_text": {
-    "it": "ACCETTO"
+    "it": "ACCETTO",
+    "en_US": "I AGREE",
+    "en": "I AGREE",
+    "de": "ICH STIMME ZU"
   }
 }

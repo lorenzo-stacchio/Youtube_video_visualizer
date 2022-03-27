@@ -1,0 +1,4 @@
+# ADD THOS STRING AS POSTFIX TO A YOUTUBE URL
+&hl=de&persist_hl=1 # deutsch
+&hl=en&persist_hl=1 # english
+&hl=en_US&persist_hl=1 # english us
