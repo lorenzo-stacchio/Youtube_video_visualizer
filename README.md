@@ -31,7 +31,7 @@ Create a virtual environment for python (or just use the global one) and install
 ## Usage
 
 ```
-usage: yt_watcher.py [-h] [--youtube_url YOUTUBE_URL] [--views VIEWS] [--sound SOUND] [--language LANGUAGE]
+usage: yt_watcher.py [-h] [--youtube_url YOUTUBE_URL] [--views VIEWS] [--watch_full] [--chrome_driver_path CHROME_DRIVER_PATH] [--silent_mode] [--sound] [--language LANGUAGE]
 
 options:
   -h, --help            show this help message and exit
