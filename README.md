@@ -11,6 +11,11 @@ Simple Python script based on selenium to augment views on a pre-defined youtube
 
 I will provide you a simple version of the Chrome Driver for windows (v. **ChromeDriver 99.0.4844.51**).
 
+## Install
+
+Create a virtual environment for python (or just use the global one) and install all the dependecies with:
+
+```pip install -r requirements.txt```
 
 ## Usage
 
