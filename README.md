@@ -47,6 +47,14 @@ options:
 Note that ```youtube_url``` must be a valid youtube video url as
 the [script default one](https://www.youtube.com/watch?v=BwWGZJeRVmU).
 
+<!--## Tor usage
+
+To use Tor you have to install tor from here [] and modified the correct environmental variables in  "scripts/drivers_custom.py".
+
+Moreover, before using it, you should always allow in the main options the reproduction of audio and video!
+
+Finally, before running the script, you should run the connect script already provide by Tor binaries!-->
+
 ## TODO list:
 
 - [x] Support italian youtube language

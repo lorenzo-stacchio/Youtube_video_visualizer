@@ -3,11 +3,10 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 import time
 import tqdm
-from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
+from scripts.drivers_custom import load_driver
+from scripts.actions_browser import action_play_video
+
 from utils import *
 import random
 import argparse
@@ -24,8 +23,11 @@ parser.add_argument('--views', dest='views', type=int, default=1,
 parser.add_argument('--watch_full', dest='watch_full', action='store_true',
                     help='If used, the entire video will be watched (recommended for short videos).')
 
-parser.add_argument('--chrome_driver_path', dest='chrome_driver_path', type=str, default="drivers/chromedriver.exe",
-                    help='Path to the chrome driver to use.')
+parser.add_argument('--browser', dest='browser', type=str, default="chrome",
+                    help='Type of browser to use: chrome, firefox, tor.')
+
+parser.add_argument('--driver_path', dest='driver_path', type=str, default="drivers/chromedriver.exe",
+                    help='Path to the driver to use.')
 
 parser.add_argument('--silent_mode', dest='silent_mode', action='store_true',
                     help='Use the driver in silent mode.')
@@ -38,42 +40,20 @@ parser.add_argument('--language', dest='language', type=str, default="en",
 
 args = parser.parse_args()
 
-# CHROME DRIVER
-chrome_options = webdriver.ChromeOptions()
-
-if args.silent_mode:
-    chrome_options.headless = True
-    chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
-    chrome_options.add_argument("--mute-audio")  # include it with silent mode
-elif not args.sound:  # valid only in non-silent mode
-    chrome_options.add_argument("--mute-audio")
+#
 
 # COUNTRY OPTIONS
 dict_html_elements_text = load_config_text_languages()
 
+
 for idx in range(args.views):
-    driver = webdriver.Chrome(executable_path=args.chrome_driver_path, chrome_options=chrome_options)
+    driver = load_driver(args)
+    # driver = webdriver.Chrome(executable_path=args.chrome_driver_path, chrome_options=chrome_options)
     # driver.get(args.youtube_url)
     driver.get(
         args.youtube_url + "&hl=%s&persist_hl=1" % args.language)  # TESTING DIFFERENT LANGUAGE, please check data/testing_post_fix_change_language.txt
-    delay = 5  # seconds
-    try:
-        WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.TAG_NAME, 'tp-yt-paper-button')))
-        # print("The select youtube video page is fully loaded!")
-    except TimeoutException:
-        print("Loading took too much time! Exit process")
-        exit()
 
-    # CLICK ON ACCEPTANCE BUTTON
-    buttons = driver.find_elements(by=By.TAG_NAME, value="tp-yt-paper-button")
-    check_found = False
-    for b in buttons:
-        if b.text == dict_html_elements_text["acceptance_terms_button_text"][args.language]:
-            b.click()
-            check_found = True
-    if not check_found:
-        raise Exception(
-            "Acceptance button not found, please update data/config_text_languages.json for your language and use non-silent mode for testing.")
+    action_play_video(args, driver, dict_html_elements_text)
 
     # Simulate passing time also providing user feedback
     # Time to watch is decided by the user choice

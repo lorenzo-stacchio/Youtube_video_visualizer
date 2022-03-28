@@ -15,8 +15,9 @@ tor_folder = "D:/Programs/Tor/Tor Browser/"
 # time.sleep(10) # wait tor connects
 
 binary = FirefoxBinary(r"%sBrowser/firefox.exe" % tor_folder)
-profile = FirefoxProfile(r"%sBrowser/TorBrowser/Data/Browser/profile.default/" % tor_folder)
+# profile = FirefoxProfile(r"%sBrowser/TorBrowser/Data/Browser/profile.default/" % tor_folder)
 # profile_path = "D:/Programs/Tor/Tor Browser/Browser/TorBrowser/Data/Browser/profile.default"
 # profile = FirefoxProfile(profile_path)
-driver = webdriver.Firefox(profile, binary, executable_path = "../drivers/geckodriver.exe")
+# driver = webdriver.Firefox(profile, binary, executable_path = "../drivers/geckodriver.exe")
+driver = webdriver.Firefox(firefox_binary = binary, executable_path = "../drivers/geckodriver.exe")
 driver.get("https://www.youtube.com/watch?v=BwWGZJeRVmU")
