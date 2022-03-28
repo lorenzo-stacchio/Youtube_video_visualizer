@@ -53,7 +53,10 @@ To use Tor you have to install tor from here [] and modified the correct environ
 
 Moreover, before using it, you should always allow in the main options the reproduction of audio and video!
 
-Finally, before running the script, you should run the connect script already provide by Tor binaries!-->
+Finally, before running the script, you should run the connect script already provide by Tor binaries!
+Also you have to refresh the indentity.
+
+-->
 
 ## TODO list:
 
