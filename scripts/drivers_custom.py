@@ -12,7 +12,15 @@ def load_tor_driver(args):
     firefox_profile = FirefoxProfile(profile_path)
     firefox_profile.set_preference('media.autoplay.default', 1)
     binary = FirefoxBinary(r"%sBrowser/firefox.exe" % tor_folder)
-    driver = webdriver.Firefox(firefox_profile=firefox_profile, firefox_binary=binary, executable_path=args.driver_path)
+
+    firefox_options = webdriver.FirefoxOptions()
+    if args.silent_mode:
+        firefox_options.headless = True
+        firefox_options.add_argument("--mute-audio")  # include it with silent mode
+    elif not args.sound:  # valid only in non-silent mode
+        firefox_options.add_argument("--mute-audio")
+
+    driver = webdriver.Firefox(firefox_profile=firefox_profile, firefox_binary=binary, executable_path=args.driver_path, options=firefox_options)
     # body = driver.find_element(by=By.TAG_NAME, value="body") # test refresh identity from browser
     # body.send_keys(Keys.CONTROL +  Keys.SHIFT + 'u')
     return driver

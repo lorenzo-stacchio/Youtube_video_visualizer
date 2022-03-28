@@ -63,7 +63,7 @@ for idx in range(args.views):
     if args.watch_full:
         yt_video_seconds = convert_string_time_to_seconds(duration)
     else:
-        yt_video_seconds = random.randrange(30, 50)	  # minimum seconds to watch to count a visualization
+        yt_video_seconds = random.randrange(35, 60)	  # minimum seconds to watch to count a visualization
 
     print(
         "%s duration is %s. I will watch it for %s seconds and then again for other %s times." % (

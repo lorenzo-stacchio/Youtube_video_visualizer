@@ -33,7 +33,7 @@ def action_play_video_tor_driver(args, driver, dict_html_elements_text):
 
 
 def action_play_video_chrome_driver(args, driver, dict_html_elements_text):
-    delay = 5
+    delay = 10
     acceptance_element_found = False
     while not acceptance_element_found:
         try:
